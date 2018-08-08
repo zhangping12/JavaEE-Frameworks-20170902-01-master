@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        bean: Java none-abstract class
+        not abstract class
+        not interface
+    -->
+
+    <bean id="x" class="java.lang.Integer">
+        <constructor-arg value="1"/>
+    </bean>
+
+    <bean id="y" class="java.lang.Integer">
+        <constructor-arg value="2"/>
+    </bean>
+
+    <bean id="calculator" class="ioc.spring.Calculator">
+        <property name="x" ref="x"/>
+        <property name="y" ref="y"/>
+    </bean>
+</beans>
